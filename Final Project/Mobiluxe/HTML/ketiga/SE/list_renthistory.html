@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>List Rent History</title>
+    <style>
+      /* Tampilan untuk layar yang lebih besar dari 768px */
+        @media screen and (min-width: 451px) {
+            body {
+                display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+            }
+        }
+
+        /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+        @media screen and (max-width: 451px) {
+            body {
+                display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+            }
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: rgba(217, 217, 217, 1);
+          position: fixed;
+          bottom: 0px;
+          width: auto;
+          border: 1px groove rgba(104, 104, 104, 0.516);
+        }
+
+      /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+      @media screen and (max-width: 451px) {
+        body {
+          display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: rgba(217, 217, 217, 1);
+          position: fixed;
+          bottom: 0px;
+          left: 0px;
+          width: 100%;
+          border: 1px groove rgba(104, 104, 104, 0.516);
+        }
+      }
+
+      .navbar img {
+        display: inline-block;
+        margin: auto;
+        margin-bottom: -10px;
+        margin-top: -8px;
+        color: #f2f2f2;
+        align-items: center;
+        padding: 20px 25px 0px;
+        text-decoration: none;
+      }
+
+      .navbar img:hover {
+        background-color: #ededed;
+        color: black;
+        height: 100%;
+      }
+
+      .center {
+        margin: auto;
+        width: 85%;
+        padding: 10px;
+        padding-top: 10px;
+      }
+
+      .center div {
+        display: inline-flex;
+        margin-bottom: -9px;
+      }
+
+      .nama {
+        width: 100%;
+
+        background-color: rgba(217, 217, 217, 0.656);
+        border-radius: 21px;
+
+        margin-top: 26px;
+        margin-bottom: 0px;
+
+        padding-top: 15px;
+        padding-bottom: 18px;
+      }
+
+      .center input {
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 10px;
+
+        border: 0px;
+        border-radius: 21px;
+
+        padding-left: 26px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+
+      .center p {
+        font-size: 20px;
+        margin-top: 30px;
+        margin-left: 31px;
+        margin-bottom: 5px;
+      }
+
+      .center hr {
+        border: 1px solid rgb(105, 105, 105);
+        margin-top: 44px;
+        margin-bottom: -5px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      input[type="email"],
+        select {
+            font-family: 'Inter';
+            width: 105%;
+            padding: 12px;
+            height: 30px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            resize: vertical;
+            border-radius: 9px;
+            background: #D9D9D9;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3)
+        }
+        .outer-box {
+            margin-top: 2%;
+            margin-left: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 390px;
+            height: 60px;
+            border-radius: 20px;
+        }
+
+        .middle-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 370px;
+            height: 60px;
+            background-color: #D9D9D9;
+            border-radius: 25px;
+        }
+
+        .inner-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 320px;
+            height: 320px;
+            background-color: #ffffff;
+            border-radius: 20px;
+        }
+        input[type="image"] {
+            margin-bottom: 6px;
+            margin-left: 80%;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #D9D9D9;
+            cursor: pointer;
+            padding: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 20px;
+        }
+
+        input[type="image"]:hover {
+            opacity: 0.8;
+        }
+
+        input[type="image"] img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .btn-with-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 160px;
+            background-color: #ffffff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .btn-with-icon img {
+            width: 20px;
+            height: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 5px;
+            width: 95%;
+            background-color: #D9D9D9;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: 1000;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+		}
+        .car-box {
+            margin-top: 5%;
+            margin-left: 7%;
+            margin-right: 6%;
+            align-items: center;
+            background-color: #D9D9D9;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 15px;
+            width: 343px;
+            height: 120px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .car-box h2 {
+            font-weight: 600;
+            margin-top: 2px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .car-box p {
+            font-size: 18px;
+            line-height: 0.5;
+        }
+    </style>
+  </head>
+  <body>
+    <form>
+        <div style="overflow-y: scroll;margin-left: 0.5%; margin-right: 0.5%;"></div>
+            <div class="outer-box">
+                <div class="middle-box">
+                    <button class="btn-with-icon">
+                        <img src="drop.png" alt="Gambar">
+                    </button>
+                </div>
+            </div>
+
+            <div class="car-box">
+                <h2>Rent History 4</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    Transaction</span></p>
+            </div>
+            <div class="car-box">
+                <h2>Rent History 3</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    Transaction</span></p>
+            </div>
+            <div class="car-box">
+                <h2>Rent History 2</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    Transaction</span></p>
+            </div>
+            <div class="car-box">
+                <h2>Rent History 1</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    Transaction</span></p>
+            </div>
+            <br><br><br><br>
+        </div>
+    </form>
+    <div class="navbar" style="display: inline-block; text-align: center">
+      <img src="1.png" onclick="TransactionList()" style="height: 32px; padding-bottom: 18px; padding-top: 15px;" />
+      <img src="2.png" onclick="CarList()" style="height: 36px; padding-top: -20px; padding-bottom: 16px; background-color: #ededed;" />
+      <img src="3.png" onclick="Home()" style="height: 35px; padding-bottom: 15px; padding-top: 16px" />
+      <img src="4.png" onclick="CarLocation()" style="height: 37px; padding-bottom: 14px" />
+      <img src="5.png" onclick="UserPage()" style="height: 35px; width: 34px; padding-bottom: 15px;" />
+    </div>
+    <script>
+        function TransactionList() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function CarList() {
+            //window.location.href='menu_page_admin.html';
+        }
+        function Home() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function CarLocation() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function UserPage() {
+            // window.location.href='halaman_user.php';
+        }
+    </script>
+  </body>
+</html>

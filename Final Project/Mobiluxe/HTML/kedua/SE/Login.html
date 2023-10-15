@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Login</title>
+    <style>
+      /* Tampilan untuk layar yang lebih besar dari 768px */
+      @media screen and (min-width: 451px) {
+        body {
+          display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+        }
+      }
+
+      /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+      @media screen and (max-width: 451px) {
+        body {
+          display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+        }
+      }
+      body {
+        margin: 10;
+        font-family: Roboto-Regular, Roboto, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
+      }
+
+      input[type="email"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      button {
+        background-color: #D9D9D9;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-top: 3px solid #e96b2e;
+        border-right: 3px solid #eeeeee;
+        border-left: 3px solid #eeeeee;
+        margin-left: auto;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; align-items: top; justify-content: flex-start;">
+        <img src="logo.png" alt="Logo" style="width: 20px; height: 20px; align-items: center;">
+        <h3 style="margin-top: 2px ;margin-left: 5px; font-family: 'Inter';">MOBILUXE</h3>
+    </div>
+    <br>
+    <h1 style="text-align: center; font-size: 50px; font-family: JetBrains Mono; letter-spacing: 5px; line-height: 53px; font-weight: 400; margin-bottom: 5px;">Welcome!</h1>
+    <h5 style="text-align: center; font-family: 'Inter'; font-size: 14px; margin-top: 10px;">
+      Don’t have an account?  
+      <span>
+        <a href="https://Youtube.com">Register Here</a>
+      </span>
+    </h2>
+    <div style="margin-top: 50px">
+      <form action="action_page.php" name="form">
+        <h1 style="font-family: 'JetBrains Mono'; font-weight: 400;margin-left: 10px; font-size: 24px; margin-bottom: 1px;">Username</h1>
+        <input style="margin-bottom: 0px; margin-top: 1px; background: #D9D9D9; border-radius: 33px; box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3); padding: 10px;" type="email" id="email" placeholder="Enter your Username" />
+        <p id="msg1" style="margin-top: 30px; color: red; font-size: 12px"></p>
+        <h1 style="font-family: 'JetBrains Mono'; font-weight: 400;margin-left: 10px; font-size: 24px; margin-bottom: 1px;">Password</h1>
+        <input style="margin-bottom: 0px; margin-top: 1px; background: #D9D9D9; border-radius: 33px; box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3); padding: 10px;" type="password" id="pass" placeholder="Enter your Password"/>
+        <p id="msg2" style="margin-top: 50px; color: red; font-size: 12px"></p>
+        <br>
+        <button type="button" onclick="validateForm()" style="border-radius:33cm; font-size: 22px; background: #D9D9D9 ; border: 1px solid #ccc; border-bottom: 3px solid #aaa; border-right: 3px solid #aaa; color: black;">LOGIN</button>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        alert("Hello! I am an alert box!");
+      }
+    </script>
+  </body>
+</html>

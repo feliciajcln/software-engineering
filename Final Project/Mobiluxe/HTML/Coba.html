@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Rent History</title>
+    <style>
+      /* Tampilan untuk layar yang lebih besar dari 768px */
+      @media screen and (min-width: 451px) {
+        body {
+          display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+        }
+      }
+
+      /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+      @media screen and (max-width: 451px) {
+        body {
+          display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+        }
+      }
+
+      .navbar {
+        overflow: hidden;
+        background-color: rgba(217, 217, 217, 1);
+        position: relative;
+        width: 100%;
+        border: 1px groove rgba(104, 104, 104, 0.516);
+      }
+
+      .navbar img {
+        display: inline-block;
+        margin: auto;
+        margin-bottom: -10px;
+        margin-top: -8px;
+        color: #f2f2f2;
+        align-items: center;
+        padding: 20px 19px 0px;
+        text-decoration: none;
+      }
+
+      .navbar img:hover {
+        background-color: #ededed;
+        color: black;
+        height: 100%;
+      }
+
+      .center {
+        margin: auto;
+        margin-bottom: 20px;
+
+        height: fit-content;
+        width: 90%;
+
+        margin-top: 38px;
+
+        border-radius: 50px;
+      }
+      .center img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+      .center h2 {
+        padding-top: 33px;
+        text-align: center;
+      }
+
+      .center p {
+        margin-left: 38px;
+        margin-bottom: -3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <input type="file" id="photo" name="photo" accept="image/*" style="background-image: Bahan/7.png" />
+    </div>
+
+    <button
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-image: url('Icon.png');
+        background-size: cover;
+        background-position: center;
+      "
+    ></button>
+    <input
+      type="file"
+      id="photo"
+      name="photo"
+      accept="image/*"
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; cursor: pointer"
+    />
+
+    <div class="navbar" style="display: inline-block; text-align: center">
+      <a
+        ><img src="php/Bahan/1.png" onclick="validateForm()" style="height: 32px; padding-bottom: 18px; padding-top: 15px; background-color: #ededed"
+      /></a>
+      <a><img src="Bahan/2.png" onclick="validateForm()" style="height: 36px; padding-top: -20px; padding-bottom: 16px" /></a>
+      <a><img src="Bahan/3.png" onclick="validateForm()" style="height: 35px; padding-bottom: 15px; padding-top: 16px" /></a>
+      <a><img src="Bahan/4.png" onclick="validateForm()" style="height: 37px; padding-bottom: 14px" /></a>
+      <a><img src="Bahan/5.png" onclick="validateForm()" style="height: 35px; width: 34px; padding-bottom: 15px" /></a>
+    </div>
+
+    <form>
+      <input
+        type="button"
+        style="
+          background-image: url(php/Bahan/1.png);
+          background-repeat: no-repeat;
+          background-size: 32px;
+          padding-bottom: 20px;
+          background-color: #ededed;
+        "
+      />
+    </form>
+
+    <script>
+      function validateForm() {
+        alert("Hello! I am an alert box!");
+      }
+    </script>
+  </body>
+</html>

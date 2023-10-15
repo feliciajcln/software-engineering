@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>halaman Transaksi mobil</title>
+    <style>
+      /* Tampilan untuk layar yang lebih besar dari 768px */
+        @media screen and (min-width: 451px) {
+            body {
+                display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+            }
+        }
+
+        /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+        @media screen and (max-width: 451px) {
+            body {
+                display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+            }
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: rgba(217, 217, 217, 1);
+          position: fixed;
+          bottom: 0px;
+          width: auto;
+          border: 1px groove rgba(104, 104, 104, 0.516);
+        }
+
+      /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+      @media screen and (max-width: 451px) {
+        body {
+          display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: rgba(217, 217, 217, 1);
+          position: fixed;
+          bottom: 0px;
+          left: 0px;
+          width: 100%;
+          border: 1px groove rgba(104, 104, 104, 0.516);
+        }
+      }
+
+      .navbar img {
+        display: inline-block;
+        margin: auto;
+        margin-bottom: -10px;
+        margin-top: -8px;
+        color: #f2f2f2;
+        align-items: center;
+        padding: 20px 25px 0px;
+        text-decoration: none;
+      }
+
+      .navbar img:hover {
+        background-color: #ededed;
+        color: black;
+        height: 100%;
+      }
+
+        .middle-box {
+            margin:auto;
+            margin-bottom: 10px;
+            width: 90%;
+            background-color: #D9D9D9;
+            border-radius: 20px;
+        }
+
+        .inner-box {
+            margin: auto;
+            padding-bottom: 10px;
+            width: 95%;
+            background-color: #ffffff;
+            border-radius: 20px;
+        }
+        
+        .o-box {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+        }
+        .m-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 390px;
+            height: 140px;
+            background-color: #D9D9D9;
+            border-radius: 20px;
+        }
+        
+        .ot-box {
+            margin-left: 5%;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 390px;
+            height: 90px;
+            border-radius: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px;
+            width: 95%;
+            background-color: #D9D9D9;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: 1000;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+		    }
+
+        .form input{
+          font-family: 'Inter';
+          width: 105%;
+          padding: 12px;
+          height: 30px;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          resize: vertical;
+          border-radius: 9px;
+          background: #D9D9D9;
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+          margin-bottom: 1px; 
+          margin-top: 1px;
+          width: 100%;
+        }
+
+        .form input[type="image"] {
+            margin-bottom: 6px;
+            margin-left: 80%;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #D9D9D9;
+            cursor: pointer;
+            padding: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 20px;
+        }
+
+        .form input[type="image"]:hover {
+            opacity: 0.8;
+        }
+
+        .form input[type="image"] img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .filter h1{
+          font-weight: 400;
+          margin-left: 0px; 
+          font-size: 18px; 
+          margin-bottom: 1px;
+        }
+
+        .submit img{
+          background-color: #D9D9D9;
+          padding: 3px;
+          border-radius: 20px;
+        }
+        .g button{
+            margin-left: 15%;
+            margin-top: 10px;
+            width: 15%; 
+            height: 30px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+            background-color: #D9D9D9;
+        }
+        .g h2{
+            font-size: 25px;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+        .car-box {
+            margin-top: 5%;
+            margin-left: 7%;
+            margin-right: 6%;
+            align-items: center;
+            background-color: #D9D9D9;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 15px;
+            width: 343px;
+            height: 120px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .car-box h2 {
+            font-weight: 600;
+            margin-top: 2px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .car-box p {
+            font-size: 18px;
+            line-height: 0.5;
+        }
+        .a{
+            display: flex;
+        }
+        .a h3{
+            margin: auto;
+            margin-top: 1%;
+        }
+        .a h5{
+            margin-top: 5px; 
+            margin-bottom: 3%;
+        }
+        .radio-group input{
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+        }
+        .radio-group label{
+            display: inline-block; 
+            font-size: 20px; 
+            margin-left: 1%;
+        }
+        input[type="email"],
+        select {
+            font-family: 'Inter';
+            width: 105%;
+            padding: 12px;
+            height: 30px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            resize: vertical;
+            border-radius: 9px;
+            background: #ffffff;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3)
+        }
+    </style>
+  </head>
+  <body>
+    <div style="overflow-y: scroll;margin-left: 0.5%; margin-right: 0.5%;"></div>      
+    <div style="height: 20px;"></div>
+        <div class="middle-box">
+                <div style="height: 1px;"></div>
+                <h3 style="margin-left: 8%; margin-bottom: 8px;">Detail Transaksi</h3>
+                <div class="inner-box">
+                <form class="form" style="margin: auto; width: 90%;">
+                    <br>
+
+                    <div class="filter" style="margin-bottom: px;">
+
+                        <div class="a">
+                            <h3 style="margin-left: 2px;">Pengambilan</h3>
+                            <h3 style="margin-right: 16%;">Pengembalian</h3>
+                        </div>
+
+                        <div class="a">
+                            <h5 style="margin-left: 2px;">Tanggal: <span>dd - mm - yyyy</span></h5>
+                            <h5 style="margin-left: 8%;">Tanggal: <span>dd - mm - yyyy</span></h5>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+                <br>
+            </div>
+
+            <div class="middle-box">
+                <div style="height: 1px;"></div>
+                <div class="a">
+                    <img src="Logo.png" alt="logo" style=" width: 30px; height: 30px; margin-left: 5%; margin-bottom: 2%;">
+                    <h3 style="margin-left: 7px;"> Lokasi Pengambilan</h3>
+                </div>
+                <div class="inner-box">
+                    <form class="form" style="margin: auto; width: 90%;">
+                        <br>
+
+                        <div class="filter" style="margin-bottom: px;">
+                            <div class="radio-group">
+                                <input type="radio" id="Lokasi" name="pengambilan" value="Kantor Rental">
+                                <label> Kantor Rental</label>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <br>
+                <div class="inner-box">
+                    <form class="form" style="margin: auto; width: 90%;">
+                        <br>
+
+                        <div class="filter" style="margin-bottom: px;">
+                            <div class="radio-group">
+                                <input type="radio" id="Lokasi" name="pengambilan" value="Kantor Rental">
+                                <label> Lokasi Lainnya</label>
+                            </div>
+                            <div style="display: flex; margin-left: 12%;">
+                                <input type="text" id="email" style="background-color: #ededed;"/>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <br>
+            </div>
+            <div class="middle-box">
+                <div style="height: 1px;"></div>
+                <div class="a">
+                    <img src="Logo.png" alt="logo" style=" width: 30px; height: 30px; margin-left: 5%; margin-bottom: 2%;">
+                    <h3 style="margin-left: 7px;"> Lokasi Pengembalian</h3>
+                </div>
+                <div class="inner-box">
+                    <form class="form" style="margin: auto; width: 90%;">
+                        <br>
+
+                        <div class="filter" style="margin-bottom: px;">
+                            <div class="radio-group">
+                                <input type="radio" id="Lokasi" name="pengambilan" value="Kantor Rental">
+                                <label> Kantor Rental</label>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <br>
+                <div class="inner-box">
+                    <form class="form" style="margin: auto; width: 90%;">
+                        <br>
+
+                        <div class="filter" style="margin-bottom: px;">
+                            <div class="radio-group">
+                                <input type="radio" id="Lokasi" name="pengambilan" value="Kantor Rental">
+                                <label> Lokasi Lainnya</label>
+                            </div>
+                            <div style="display: flex; margin-left: 12%;">
+                                <input type="text" id="email" style="background-color: #ededed;"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <br>
+            </div>  
+            <div class="middle-box">
+                <div style="height: 1px;"></div>
+                <h3 style="margin-left: 8%; margin-bottom: 8px;">Pembayaran Via BCA</h3>
+                <div class="inner-box">
+                <form class="form" style="margin: auto; width: 90%;">
+                    <br>
+
+                    <div class="filter" style="margin-bottom: px;">
+
+                        <div class="a">
+                            <h3 style="margin-left: 2px;">Nomor Rekening<label>: 1234567890 a/n M-Uxe</label></h3>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+                <br>
+            </div>
+
+            <div class="middle-box">
+                <div style="height: 1px;"></div>
+                <h3 style="margin-left: 8%; margin-bottom: 8px;">Upload Bukti Pembayaran</h3>
+                <form class="form" style="margin: auto; width: 90%;">
+                    <br>
+
+                    <div class="filter" style="margin-bottom: px;">
+
+                        <label for="photo" style="font-weight: 1000; background-color: #ffffff; color: black; padding: 10px; border-radius: 20px; cursor: pointer; display: inline-block; width: 94%; text-align: center; box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4); height: 20px; margin-top: -15px; ">+</label>
+                        <input type="file" id="photo" name="photo" style="display: none;">
+
+                    </div>
+                    </form>
+                <br>
+            </div>
+            <br>
+            <div style=" margin-left: 6%; width: 88%; height: 30px; background-color: #ffffff; border: 1px solid black;">  
+                <label style="margin-left: 5%; font-size: 20px; align-items: center; font-weight: 700; display: inline;">Total</label>
+                <span style="margin-left: 50%; font-size: 20px; align-items: center; font-weight: 700; display: inline;">RP 400.000</span>
+            </div>
+            <br>
+            <div>
+                <br>
+                <form>
+                    <label for="photo" style=" margin-left: 22px; font-weight: 1000; background-color: #D9D9D9; color: black; padding: 10px; border-radius: 20px; cursor: pointer; display: inline-block; width: 85%; text-align: center; box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4); height: 20px; margin-top: -15px; ">Payment</label>
+                    <input type="submit" style="display: none;">
+                </form>
+            </div>
+
+            <br><br><br><br>
+    </div>
+    
+    <div class="navbar" style="display: inline-block; text-align: center">
+      <img src="1.png" onclick="TransactionList()" style="height: 32px; padding-bottom: 18px; padding-top: 15px;" />
+      <img src="2.png" onclick="CarList()" style="height: 36px; padding-top: -20px; padding-bottom: 16px; background-color: #ededed;" />
+      <img src="3.png" onclick="Home()" style="height: 35px; padding-bottom: 15px; padding-top: 16px" />
+      <img src="4.png" onclick="CarLocation()" style="height: 37px; padding-bottom: 14px" />
+      <img src="5.png" onclick="UserPage()" style="height: 35px; width: 34px; padding-bottom: 15px;" />
+    </div>
+    <script>
+        function TransactionList() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function CarList() {
+            window.location.href='menu_page_admin.html';
+        }
+        function Home() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function CarLocation() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function UserPage() {
+            // window.location.href='halaman_user.php';
+        }
+    </script>
+  </body>
+</html>

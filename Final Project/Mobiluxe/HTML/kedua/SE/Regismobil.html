@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>regis Mobil</title>
+    <style>
+      /* Tampilan untuk layar yang lebih besar dari 768px */
+      @media screen and (min-width: 451px) {
+        body {
+          display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+        }
+      }
+
+      /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+      @media screen and (max-width: 451px) {
+        body {
+          display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+        }
+      }
+      body {
+        margin: 10;
+        font-family: Roboto-Regular, Roboto, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
+      }
+
+      button {
+        background-color: #d9d9d9;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .form h1 {
+        font-weight: 400;
+        margin-left: 10px;
+        font-size: 18px;
+        margin-bottom: 1px;
+      }
+
+      .form input {
+        font-family: "Inter";
+        width: 100%;
+        /* height: 30px; */
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        resize: vertical;
+        border-radius: 9px;
+        background: #e1e1e191;
+
+        margin-bottom: 0px;
+        margin-top: 1px;
+        padding: 10px;
+        padding-left: 10px;
+      }
+
+      .form label {
+        background-color: #e1e1e191;
+        color: black;
+        padding: 12px;
+        border-radius: 5px;
+        display: block;
+        text-align: center;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.127);
+        font-weight: 1000;
+      }
+
+      .submit label {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 45%;
+
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        font-size: 15px;
+
+        background: #e1e1e191;
+        color: black;
+
+        font-weight: 600;
+
+        border: 1px solid #cccccc57;
+        border-radius: 10px;
+      }
+
+      .form p {
+        margin-top: 5px;
+        margin-left: 7px;
+        color: red;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; align-items: top; justify-content: flex-start">
+      <img src="logo.png" alt="Logo" style="width: 20px; height: 20px; align-items: center" />
+      <!-- <h3 style="margin-top: 2px; margin-left: 5px; font-family: 'Inter'">MOBILUXE</h3> -->
+    </div>
+    <br />
+    <!-- <div style="display: relative; height: 190px">
+      <div
+        style="
+          width: 125.24px;
+          height: 125.24px;
+          top: 20%;
+          left: 50%;
+          background-color: #d9d9d9;
+          margin: 0 auto;
+          border-radius: 15px;
+          display: relative;
+        "
+      >
+        <img src="mobil.png" alt="Gambar" style="width: 90px; height: 80px; position: inherit; margin-left: 15%; margin-top: 20%" />
+      </div>
+      <div style="position: relative; height: 100px">
+        <div
+          style="
+            position: absolute;
+            top: 2%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid black;
+            text-align: center drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25)) drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+          "
+        ></div>
+        <button
+          style="
+            position: absolute;
+            top: 2%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            width: 20px;
+            height: 40px;
+            background-image: url('Icon.png');
+            background-size: cover;
+            background-position: center;
+          "
+        ></button>
+        <input
+          type="file"
+          id="photo"
+          name="photo"
+          accept="image/*"
+          style="position: absolute; top: 2%; left: 50%; transform: translate(-15%, -50%); opacity: 0; cursor: pointer"
+        />
+      </div>
+    </div> -->
+
+    <div class="form" style="margin-top: 10px">
+      <form method="post">
+        <!-- <p style="margin-left: 0px; margin-bottom: 30px; text-align: center;"><?php echo $nameErr;?></p> -->
+        <h1>Nama Mobil</h1>
+        <input type="nama" name="nama" value="<?php echo $name;?>" />
+        <p><?php echo $nameErr;?></p>
+
+        <h1>Tipe Mobil</h1>
+        <input type="email" name="Tipe" value="<?php echo $email;?>" />
+        <p><?php echo $tipeErr;?></p>
+
+        <h1>Tahun Mobil</h1>
+        <input type="password" name="Tahun" />
+        <p><?php echo $tahunErr;?></p>
+
+        <h1>Transmisi</h1>
+        <input type="password" name="Transmisi" />
+        <p><?php echo $transmisiErr;?></p>
+
+        <h1>Kapasitas Penumpang</h1>
+        <input type="number" name="Kapasitas" value="<?php echo $phone;?>" />
+        <p><?php echo $kapasitasErr;?></p>
+
+        <h1>Plat Nomor</h1>
+        <input type="alamat" name="Plat" value="<?php echo $alamat;?>" />
+        <p><?php echo $platErr;?></p>
+
+        <h1>Daerah</h1>
+        <input type="text" name="daerah" value="<?php echo $daerah;?>" />
+        <p><?php echo $daerahErr;?></p>
+
+        <h1>Foto STNK</h1>
+        <label for="photo1">+</label>
+        <input type="file" id="photo1" name="photo1" style="display: none" accept="image/*" />
+        <!-- <p><?php echo $nameErr;?></p> -->
+
+        <br />
+        <div class="submit" style="text-align: center; margin-top: 15px">
+          <label for="submit">Save Data</label>
+          <input type="submit" id="submit" name="submit" style="display: none" />
+        </div>
+        <div style="height: 10px"></div>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        alert("Hello! I am an alert box!");
+      }
+    </script>
+  </body>
+</html>

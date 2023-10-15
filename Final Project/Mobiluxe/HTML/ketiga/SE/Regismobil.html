@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>regis Mobil</title>
+    <style>
+        /* Tampilan untuk layar yang lebih besar dari 768px */
+        @media screen and (min-width: 451px) {
+            body {
+                display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+            }
+        }
+
+        /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+        @media screen and (max-width: 451px) {
+            body {
+                display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+            }
+        }
+        body {
+        margin: 10;
+        font-family: Roboto-Regular, Roboto, Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif;
+        }
+        input[type="email"],
+        select {
+            font-family: 'Inter';
+            width: 100%;
+            padding: 12px;
+            height: 30px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            resize: vertical;
+            border-radius: 9px;
+            background: #D9D9D9;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3)
+        }
+        button {
+            background-color: #D9D9D9;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-top: 3px solid #e96b2e;
+            border-right: 3px solid #eeeeee;
+            border-left: 3px solid #eeeeee;
+            margin-left: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: top; justify-content: flex-start;">
+        <img src="logo.png" alt="Logo" style="width: 20px; height: 20px; align-items: center;">
+        <h3 style="margin-top: 2px ;margin-left: 5px; font-family: 'Inter';">MOBILUXE</h3>
+    </div>
+    <br>
+    <div style="display: relative; height: 190px;">
+        <div style="width: 125.24px; height: 125.24px; top:20%; left: 50%; background-color: #D9D9D9; margin: 0 auto; border-radius: 15px; display: relative;">
+            <img src="mobil.png" alt="Gambar" style="width: 90px; height: 80px; position: inherit; margin-left: 15%; margin-top: 20%;">
+        </div>
+        <div style="position: relative; height: 100px;">
+            <div style="position: absolute; top: 2%; left: 65%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; border: 2px solid black; text-align: center drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25)) drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));"></div>
+            <button style="position: absolute; top: 2%; left: 65%; transform: translate(-50%, -50%); border-radius: 50%; width: 20px; height: 40px; background-image: url('Icon.png'); background-size: cover; background-position: center;"></button>
+            <input type="file" id="photo" name="photo" accept="image/*" style="position: absolute; top: 2%; left: 50%; transform: translate(-15%, -50%); opacity: 0; cursor: pointer;">      
+        </div>
+    </div>
+    <div style="overflow-y: scroll;margin-left: 0.5%; margin-right: 0.5%;">
+        <form action="action_page.php" name="form">
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 1px;">Nama Mobil</h1>
+            <input style="margin-bottom: 0px; margin-top: 1px; padding: 20px;" type="email" id="email"/>
+            <p id="msg1" style="margin-top: 10px; color: red; font-size: 12px"></p>
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 1px;">Tipe Mobil</h1>
+            <input style="margin-bottom: 0px; margin-top: 1px; padding: 20px;" type="email" id="email"/>
+            <p id="msg1" style="margin-top: 10px; color: red; font-size: 12px"></p>
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 1px;">Tahun Mobil</h1>
+            <input style="margin-bottom: 0px; margin-top: 1px; padding: 20px;" type="email" id="email"/>
+            <p id="msg1" style="margin-top: 10px; color: red; font-size: 12px"></p>
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 1px;">Transmisi</h1>
+            <input style="margin-bottom: 0px; margin-top: 1px; padding: 20px;" type="email" id="email"/>
+            <p id="msg1" style="margin-top: 10px; color: red; font-size: 12px"></p>
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 1px;">Kapasitas Penumpang</h1>
+            <input style="margin-bottom: 0px; margin-top: 1px; padding: 20px;" type="email" id="email"/>
+            <p id="msg1" style="margin-top: 10px; color: red; font-size: 12px"></p>
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 1px;">Plat Nomor</h1>
+            <input style="margin-bottom: 0px; margin-top: 1px; padding: 20px;" type="email" id="email" />
+            <p id="msg1" style="margin-top: 10px; color: red; font-size: 12px"></p>
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 1px;">Daerah</h1>
+            <input style="margin-bottom: 0px; margin-top: 1px; padding: 20px;" type="email" id="email" />
+            <p id="msg1" style="margin-top: 10px; color: red; font-size: 12px"></p>
+
+            <h1 style="font-weight: 400;margin-left: 10px; font-size: 18px; margin-bottom: 12px;">Foto STNK</h1>
+            <label for="photo" style="width: 100%; background-color: #D9D9D9; color: black; padding: 10px; border-radius: 5px; cursor: pointer; display: inline-block; width: 412px; text-align: center; box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3); font-weight: 1000; height: 20px;">+</label>
+            <input type="file" id="photo" name="photo" style="display: none;">
+            <br><br><br>
+
+            <button type="button" onclick="validateForm()" style="border-radius:33cm; font-size: 22px; background: #D9D9D9 ; border: 1px solid #ccc; border-bottom: 3px solid #aaa; border-right: 3px solid #aaa; color: black; width: 50%; margin-left: 25%; font-weight: bold;">Save data</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+          alert("Hello! I am an alert box!");
+        }
+    </script>
+</body>
+</html>

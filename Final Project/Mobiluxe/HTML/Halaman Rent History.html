@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Rent History</title>
+    <style>
+      /* Tampilan untuk layar yang lebih besar dari 768px */
+      @media screen and (min-width: 451px) {
+        body {
+          display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+        }
+      }
+
+      /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+      @media screen and (max-width: 451px) {
+        body {
+          display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+        }
+      }
+
+      .navbar {
+        overflow: hidden;
+        background-color: rgba(217, 217, 217, 1);
+        position: relative;
+        width: 100%;
+        border: 1px groove rgba(104, 104, 104, 0.516);
+      }
+
+      .navbar img {
+        display: inline-block;
+        margin: auto;
+        margin-bottom: -10px;
+        margin-top: -8px;
+        color: #f2f2f2;
+        align-items: center;
+        padding: 20px 19px 0px;
+        text-decoration: none;
+      }
+
+      .navbar img:hover {
+        background-color: #ededed;
+        color: black;
+        height: 100%;
+      }
+
+      .center {
+        margin: auto;
+        margin-bottom: 20px;
+
+        height: fit-content;
+        width: 90%;
+
+        margin-top: 38px;
+
+        background-color: rgba(217, 217, 217, 0.656);
+        border-radius: 15px;
+      }
+
+      .box {
+        margin: auto;
+        height: 300px;
+        width: 85%;
+
+        background-color: white;
+        border-radius: 15px;
+      }
+
+      .center h2 {
+        padding-top: 33px;
+        text-align: center;
+      }
+
+      .center p {
+        margin-left: 38px;
+        margin-bottom: -3px;
+      }
+
+      .image {
+        width: 90%;
+        height: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h2>Rent History</h2>
+      <div class="box">
+        <div class="image"></div>
+      </div>
+
+      <p style="margin-top: 30px">Nomor Resi<span style="margin-left: 49px">: </span></p>
+      <p>Tanggal Transaksi<span style="margin-left: 10px">: </span></p>
+      <p>Tanggal Mulai<span style="margin-left: 33px">: </span></p>
+      <p>Tanggal Selesai<span style="margin-left: 27px">: </span></p>
+      <p>Status <span style="margin-left: 84px">: </span></p>
+      <p>Nama Perental <span style="margin-left: 28px">: </span></p>
+      <p>Nama Penyewa <span style="margin-left: 23px">: </span></p>
+      <p>Total Biaya <span style="margin-left: 48px">: </span></p>
+
+      <br /><br />
+    </div>
+
+    <div class="navbar" style="display: inline-block; text-align: center">
+      <img src="Bahan/1.png" onclick="validateForm()" style="height: 32px; padding-bottom: 18px; padding-top: 15px; background-color: #ededed" />
+      <img src="Bahan/2.png" onclick="validateForm()" style="height: 36px; padding-top: -20px; padding-bottom: 16px" />
+      <img src="Bahan/3.png" onclick="validateForm()" style="height: 35px; padding-bottom: 15px; padding-top: 16px" />
+      <img src="Bahan/4.png" onclick="validateForm()" style="height: 37px; padding-bottom: 14px" />
+      <img src="Bahan/5.png" onclick="validateForm()" style="height: 35px; width: 34px; padding-bottom: 15px" />
+    </div>
+
+    <script>
+      function validateForm() {
+        alert("Hello! I am an alert box!");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>List Transaksi</title>
+    <style>
+      /* Tampilan untuk layar yang lebih besar dari 768px */
+        @media screen and (min-width: 451px) {
+            body {
+                display: none; /* Sembunyikan halaman untuk layar yang lebih besar */
+            }
+        }
+
+        /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+        @media screen and (max-width: 451px) {
+            body {
+                display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+            }
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: rgba(217, 217, 217, 1);
+          position: fixed;
+          bottom: 0px;
+          width: auto;
+          border: 1px groove rgba(104, 104, 104, 0.516);
+        }
+
+      /* Tampilan untuk layar yang kurang dari atau sama dengan 768px */
+      @media screen and (max-width: 451px) {
+        body {
+          display: block; /* Tampilkan halaman untuk layar yang lebih kecil */
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: rgba(217, 217, 217, 1);
+          position: fixed;
+          bottom: 0px;
+          left: 0px;
+          width: 100%;
+          border: 1px groove rgba(104, 104, 104, 0.516);
+        }
+      }
+
+      .navbar img {
+        display: inline-block;
+        margin: auto;
+        margin-bottom: -10px;
+        margin-top: -8px;
+        color: #f2f2f2;
+        align-items: center;
+        padding: 20px 25px 0px;
+        text-decoration: none;
+      }
+
+      .navbar img:hover {
+        background-color: #ededed;
+        color: black;
+        height: 100%;
+      }
+
+        .middle-box {
+            margin:auto;
+            margin-bottom: 10px;
+            width: 90%;
+            background-color: #D9D9D9;
+            border-radius: 20px;
+        }
+
+        .inner-box {
+            margin: auto;
+            padding-bottom: 10px;
+            width: 95%;
+            background-color: #ffffff;
+            border-radius: 20px;
+        }
+        
+        .o-box {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+        }
+        .m-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 390px;
+            height: 140px;
+            background-color: #D9D9D9;
+            border-radius: 20px;
+        }
+        
+        .ot-box {
+            margin-left: 5%;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 390px;
+            height: 90px;
+            border-radius: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px;
+            width: 95%;
+            background-color: #D9D9D9;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: 1000;
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+		    }
+
+        .form input{
+          font-family: 'Inter';
+          width: 105%;
+          padding: 12px;
+          height: 30px;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          resize: vertical;
+          border-radius: 9px;
+          background: #D9D9D9;
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+          margin-bottom: 1px; 
+          margin-top: 1px;
+          width: 100%;
+        }
+
+        .form input[type="image"] {
+            margin-bottom: 6px;
+            margin-left: 80%;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #D9D9D9;
+            cursor: pointer;
+            padding: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 20px;
+        }
+
+        .form input[type="image"]:hover {
+            opacity: 0.8;
+        }
+
+        .form input[type="image"] img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .filter h1{
+          font-weight: 400;
+          margin-left: 0px; 
+          font-size: 18px; 
+          margin-bottom: 1px;
+        }
+
+        .submit img{
+          background-color: #D9D9D9;
+          padding: 3px;
+          border-radius: 20px;
+        }
+        .g button{
+            margin-left: 15%;
+            margin-top: 10px;
+            width: 15%; 
+            height: 30px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+            background-color: #D9D9D9;
+        }
+        .g h2{
+            font-size: 25px;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+        .car-box {
+            margin-top: 5%;
+            margin-left: 7%;
+            margin-right: 6%;
+            align-items: center;
+            background-color: #D9D9D9;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 15px;
+            width: 343px;
+            height: 120px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .car-box h2 {
+            font-weight: 600;
+            margin-top: 2px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .car-box p {
+            font-size: 18px;
+            line-height: 0.5;
+        }
+    </style>
+  </head>
+  <body>
+    <div style="overflow-y: scroll;margin-left: 0.5%; margin-right: 0.5%;"></div>      
+    <div style="height: 20px;"></div>
+    <div class="middle-box">
+            <br>
+            <div class="inner-box">
+              <form class="form" style="margin: auto; width: 90%;">
+                <br>
+                  <div style="display:flex; justify-content: center;">                    
+                    <img src="logo.png" alt="Logo" style="width: 50px; height: 50px; align-items: center; margin-left: -10px;">
+                    <h1 style="margin-top: 10px ;margin-left: 7px; font-family: 'Inter';">MOBILUXE</h1>
+                  </div>
+
+                  <div class="filter" style="margin-bottom: px;">
+
+                  
+                    <div class="g">
+                        <button></button>
+                        <h2>Rent History</h2>
+                      </div>
+                      <div class="g">
+                        <button></button>
+                        <h2>Tenant History</h2>
+                      </div>
+                  
+                </div>
+                  <!-- <input type="image" src="Search.png" alt="Gambar tombol"> -->
+                  <div class="submit" style="text-align: right;">
+                    <br>
+                    <label for="submit" style="margin-right: 5px;"><img src="Search.png" alt="Logo" style="width: 40px; height: 35px;"></label>
+                    <input type="submit" id="submit" name="submit" style="display: none;"/>
+                    <br>
+                  </div>
+                </form>
+            </div>
+            <br>
+          </div>
+
+            <div class="car-box">
+                <h2>Tenant History 4</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    Confirmaton</span></p>
+            </div>
+
+            <div class="car-box">
+                <h2>Tenant History 3</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    Completed</span></p>
+            </div>
+
+            <div class="car-box">
+                <h2>Tenant History 2</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    Confirmaton</span></p>
+            </div>
+
+            <div class="car-box">
+                <h2>Tenant History 1</h2>
+                <p>Nomor Resi  <span style="margin-left: 2%;">:     AA112323231XX</span></p>
+                <p>Tanggal  <span style="margin-left: 11%;">:     14 - Jan - 2023</span></p>
+                <p>Status  <span style="margin-left: 15%;">:    On Going</span></p>
+            </div>
+
+            <br><br><br><br>
+    </div>
+    
+    <div class="navbar" style="display: inline-block; text-align: center">
+      <img src="1.png" onclick="TransactionList()" style="height: 32px; padding-bottom: 18px; padding-top: 15px;" />
+      <img src="2.png" onclick="CarList()" style="height: 36px; padding-top: -20px; padding-bottom: 16px; background-color: #ededed;" />
+      <img src="3.png" onclick="Home()" style="height: 35px; padding-bottom: 15px; padding-top: 16px" />
+      <img src="4.png" onclick="CarLocation()" style="height: 37px; padding-bottom: 14px" />
+      <img src="5.png" onclick="UserPage()" style="height: 35px; width: 34px; padding-bottom: 15px;" />
+    </div>
+    <script>
+        function TransactionList() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function CarList() {
+            window.location.href='menu_page_admin.html';
+        }
+        function Home() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function CarLocation() {
+            // window.location.href='menu_page_admin.html';
+        }
+        function UserPage() {
+            // window.location.href='halaman_user.php';
+        }
+    </script>
+  </body>
+</html>
